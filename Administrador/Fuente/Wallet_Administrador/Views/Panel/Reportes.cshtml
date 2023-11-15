@@ -1,0 +1,57 @@
+﻿@{
+	ViewData["Title"] = "Reportes";
+}
+<div class="row">
+	<div class="col-12">
+		<div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <h5 class="card-title mb-0">Lista de Transacciones</h5>
+                <button class="btn btn-success" id="btnDownloadExcel1">Descargar Excel</button>
+            </div>
+			<div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-responsive" style="width:100%" id="tablaTransaccion">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Usuario</th>
+                                <th scope="col">Tipo</th>
+                                <th scope="col">Monto S/.</th>
+                                <th scope="col">Fecha</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <h5 class="card-title mb-0">Lista de Transacciones</h5>
+                <button class="btn btn-success" id="btnDownloadExcel2">Descargar Excel</button>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-responsive" style="width:100%" id="tablaBalance">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Usuario</th>
+                                <th scope="col">Balance</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script src="~/js/Reportes.js"></script>
+}

@@ -1,0 +1,15 @@
+D:\UPC\TP2\MVC\DA\bin\Release\net6.0\DA.deps.json
+D:\UPC\TP2\MVC\DA\bin\Release\net6.0\DA.dll
+D:\UPC\TP2\MVC\DA\bin\Release\net6.0\DA.pdb
+D:\UPC\TP2\MVC\DA\bin\Release\net6.0\BE.dll
+D:\UPC\TP2\MVC\DA\bin\Release\net6.0\BE.pdb
+D:\UPC\TP2\MVC\DA\obj\Release\net6.0\DA.csproj.AssemblyReference.cache
+D:\UPC\TP2\MVC\DA\obj\Release\net6.0\DA.GeneratedMSBuildEditorConfig.editorconfig
+D:\UPC\TP2\MVC\DA\obj\Release\net6.0\DA.AssemblyInfoInputs.cache
+D:\UPC\TP2\MVC\DA\obj\Release\net6.0\DA.AssemblyInfo.cs
+D:\UPC\TP2\MVC\DA\obj\Release\net6.0\DA.csproj.CoreCompileInputs.cache
+D:\UPC\TP2\MVC\DA\obj\Release\net6.0\DA.csproj.CopyComplete
+D:\UPC\TP2\MVC\DA\obj\Release\net6.0\DA.dll
+D:\UPC\TP2\MVC\DA\obj\Release\net6.0\refint\DA.dll
+D:\UPC\TP2\MVC\DA\obj\Release\net6.0\DA.pdb
+D:\UPC\TP2\MVC\DA\obj\Release\net6.0\ref\DA.dll

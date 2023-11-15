@@ -1,0 +1,76 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Wallet_Administrador
+build_property.RootNamespace = Wallet_Administrador
+build_property.ProjectDir = D:\UPC\TP2\MVC\Wallet_Administrador\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\UPC\TP2\MVC\Wallet_Administrador
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/UPC/TP2/MVC/Wallet_Administrador/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/UPC/TP2/MVC/Wallet_Administrador/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/UPC/TP2/MVC/Wallet_Administrador/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/UPC/TP2/MVC/Wallet_Administrador/Views/Panel/Ajustes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFuZWxcQWp1c3Rlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/UPC/TP2/MVC/Wallet_Administrador/Views/Panel/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFuZWxcRGFzaGJvYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/UPC/TP2/MVC/Wallet_Administrador/Views/Panel/Recargar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFuZWxcUmVjYXJnYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/UPC/TP2/MVC/Wallet_Administrador/Views/Panel/Reportes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFuZWxcUmVwb3J0ZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/UPC/TP2/MVC/Wallet_Administrador/Views/Panel/Transferencia.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFuZWxcVHJhbnNmZXJlbmNpYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/UPC/TP2/MVC/Wallet_Administrador/Views/Panel/UsuarioDetalle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFuZWxcVXN1YXJpb0RldGFsbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/UPC/TP2/MVC/Wallet_Administrador/Views/Panel/Usuarios.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFuZWxcVXN1YXJpb3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/UPC/TP2/MVC/Wallet_Administrador/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/UPC/TP2/MVC/Wallet_Administrador/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/UPC/TP2/MVC/Wallet_Administrador/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/UPC/TP2/MVC/Wallet_Administrador/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/UPC/TP2/MVC/Wallet_Administrador/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-2ws846mdcy

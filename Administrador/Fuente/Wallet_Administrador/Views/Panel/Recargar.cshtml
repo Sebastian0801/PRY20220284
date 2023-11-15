@@ -1,0 +1,144 @@
+﻿@{
+	ViewData["Title"] = "Recarga";
+}
+<div class="row">
+	<div class="col-12">
+		<div class="card">
+			<div class="card-header">
+				<h5 class="card-title mb-0">Recarga</h5>
+			</div>
+			<div class="card-body">
+				<div class="row row-sm">
+					<div class="col-lg-6">
+						<div class="form-group">
+							<select name="trans" class="form-control form-select" id="metodo" data-bs-placeholder="Transferencia">
+								<option value="1" selected>Yape</option>
+							</select>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="form-group">
+                            <button class="btn btn-success" onclick="validarMetodo()">Registrar</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">Retirar</h5>
+            </div>
+            <div class="card-body">
+                <div class="row row-sm">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <select name="trans" class="form-control form-select" id="metodo2" data-bs-placeholder="Transferencia">
+                                <option value="1" selected>Yape</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <button class="btn btn-success" onclick="validarRetiro()">Registrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">Lista de Usuarios</h5>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-responsive" style="width:100%" id="tablaUsuarios">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Monto</th>
+                                <th scope="col">Estado</th>
+                                <th scope="col">Fecha creación</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalYape">
+    <div class="modal-dialog modal-dialog-centered text-center" role="document">
+        <div class="modal-content modal-content-demo">
+            <div class="modal-header">
+                <h5 class="modal-title">Yape</h5><button aria-label="Close" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row row-sm">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <img src="/img/QR_Yape.jpg"/>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group" style="text-align:center; align-items:center;align-content:center;margin-top:50px;">
+                            <label for="exampleInputEmail1" class="form-label">Número: 963739613</label>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="row row-sm">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label class="form-label">Monto recargado</label>
+                            @*<input type="number" class="form-control" id="montoYape" placeholder="0,00" step=".01" min="0">*@
+                            <input type="number" class="form-control" id="montoYape" placeholder="0" min="0">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success" onclick="validarYape()">Validar recarga</button> <button class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalYapeRetiro">
+    <div class="modal-dialog modal-dialog-centered text-center" role="document">
+        <div class="modal-content modal-content-demo">
+            <div class="modal-header">
+                <h5 class="modal-title">Yape</h5><button aria-label="Close" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row row-sm">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label class="form-label">Monto a Retirar</label>
+                            @*<input type="number" class="form-control" id="montoYape" placeholder="0,00" step=".01" min="0">*@
+                            <input type="number" class="form-control" id="montoYape2" placeholder="0" min="0">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success" onclick="validarYapeRetiro()">Validar recarga</button> <button class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+	<script src="~/js/Recargar.js"></script>
+}

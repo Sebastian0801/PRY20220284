@@ -1,0 +1,6 @@
+Credenciales para acceder al servidor de base de datos en Amazon RDS:
+
+Server Name: pry20220284.cqfhocnyfrwe.us-east-1.rds.amazonaws.com
+Authentication: SQL Server Authentication
+Login: admin
+Password: Zxsder258#$%

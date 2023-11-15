@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Response>
+	<Gather numDigits="4" action="/procesar-digitos" method="POST">
+		<Say>Por favor, ingresa cuatro dígitos y presiona la tecla de numeral.</Say>
+	</Gather>
+</Response>

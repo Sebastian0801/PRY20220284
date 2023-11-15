@@ -1,0 +1,240 @@
+﻿@using BE;
+@{
+	ViewData["Title"] = "Usuario Detalle";
+	BEUsuarios UsuarioXID = ViewBag.UsuarioXID as BEUsuarios;
+	List<BETransacciones> lstUltimos5movimientos = ViewBag.lstUltimos5movimientos as List<BETransacciones>;
+}
+<div class="row">
+	<div class="col-12">
+		<div class="card">
+			<div class="card-header">
+				<h5 class="card-title mb-0">Detalle Usuario</h5>
+			</div>
+			<div class="card-body">
+               <div>
+					<div class="row row-sm">
+						<div class="col-lg-4">
+							<div class="form-group">
+								<label class="form-label">DNI</label>
+								<input type="text" class="form-control" id="DNI" placeholder="DNI" value="@UsuarioXID.DNI">
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="form-group">
+								<label class="form-label">DNI</label>
+								<input type="text" class="form-control" id="nombres" placeholder="DNI" value="@UsuarioXID.nombres">
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="form-group">
+								<label class="form-label">DNI</label>
+								<input type="text" class="form-control" id="apellidos" placeholder="DNI" value="@UsuarioXID.apellidos">
+							</div>
+						</div>
+					</div>
+					<br />
+					<div class="row row-sm">
+						<div class="col-lg-4">
+							<div class="form-group">
+								<label class="form-label">Celular</label>
+								<input type="text" class="form-control" id="celular" placeholder="DNI" value="@UsuarioXID.celular">
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="form-group">
+								<label class="form-label">Estado</label>
+								<select name="estado" class="form-control form-select" id="estado" data-bs-placeholder="Estado">
+									@if (UsuarioXID.estado == 1)
+									{
+										<option value="1" selected>Activo</option>
+									}
+									else
+									{
+										<option value="1">Activo</option>
+									}
+
+									@if (UsuarioXID.estado == 2)
+									{
+										<option value="2" selected>Inactivo</option>
+									}
+									else
+									{
+										<option value="2">Inactivo</option>
+									}
+								</select>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="form-group">
+								<label class="form-label">Fecha de Creación</label>
+								<input type="datetime" class="form-control" id="apellidos" placeholder="DNI" value="@UsuarioXID.fechaCreacion" readonly>
+							</div>
+						</div>
+					</div>
+					<br />
+					<div class="row row-sm">
+						
+					</div>
+
+
+					<div class="row row-sm">
+						<div class="col-lg-12">
+							<div class="form-group d-flex justify-content-end">
+								<div class="form-group mx-right">
+									<button class="btn btn-success" onclick="actualizarDatos()">Actualizar</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+
+			   </div>
+			</div>
+		</div>
+	</div>
+	<div class="col-12">
+		<div class="card">
+			<div class="card-header">
+				<h5 class="card-title mb-0">Transferencia</h5>
+			</div>
+			<div class="card-body">
+				<div class="row row-sm">
+					<div class="col-lg-5">
+						<div class="form-group">
+							<label class="form-label">Fecha de Creación</label>
+							<select name="trans" class="form-control form-select" id="trans" data-bs-placeholder="Transferencia">
+								<option value="1" selected>Ingreso</option>
+								<option value="2">Retiro</option>
+							</select>
+						</div>
+					</div>
+					<div class="col-lg-5">
+						<div class="form-group">
+							<label class="form-label">Monto</label>
+							<input type="number" class="form-control" id="monto" placeholder="0,00" value="@UsuarioXID.fechaCreacion" step=".01" min="0">
+						</div>
+					</div>
+					<div class="col-lg-2">
+						<div class="form-group">
+							<label class="form-label">Acciones</label>
+							<br />
+							<button class="btn btn-success" onclick="transaccionCuenta()">Realizar</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	@*<div class="col-6">
+		<div class="card">
+			<div class="card-header">
+				<h5 class="card-title mb-0">Transacciones realizadas por mes</h5>
+			</div>
+			<div class="card-body">
+				<div class="chart chart-sm">
+					<canvas id="chartjs-dashboard-line"></canvas>
+				</div>
+			</div>
+		</div>
+	</div>*@
+	<div class="col-12">
+		<div class="card">
+			<div class="card-header">
+				<h5 class="card-title mb-0">Últimos Movimientos</h5>
+			</div>
+			<div class="card-body">
+				@foreach (var item in lstUltimos5movimientos)
+				{
+					<div class="row row-sm">
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label class="form-label">@item.texttipoTransaccion</label>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label class="form-label">S/. @item.monto</label>
+							</div>
+						</div>
+					</div>
+					<hr />
+				}
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		var ctx = document.getElementById("chartjs-dashboard-line").getContext("2d");
+		var gradient = ctx.createLinearGradient(0, 0, 0, 225);
+		gradient.addColorStop(0, "rgba(215, 227, 244, 1)");
+		gradient.addColorStop(1, "rgba(215, 227, 244, 0)");
+		// Line chart
+		new Chart(document.getElementById("chartjs-dashboard-line"), {
+			type: "line",
+			data: {
+				labels: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+				datasets: [{
+					label: "Monto mensual (S/.)",
+					fill: true,
+					backgroundColor: gradient,
+					borderColor: window.theme.primary,
+					data: [
+						2115,
+						1562,
+						1584,
+						1892,
+						1587,
+						1923,
+						2566,
+						2448,
+						2805,
+						3438,
+						2917,
+						3327
+					]
+				}]
+			},
+			options: {
+				maintainAspectRatio: false,
+				legend: {
+					display: false
+				},
+				tooltips: {
+					intersect: false
+				},
+				hover: {
+					intersect: true
+				},
+				plugins: {
+					filler: {
+						propagate: false
+					}
+				},
+				scales: {
+					xAxes: [{
+						reverse: true,
+						gridLines: {
+							color: "rgba(0,0,0,0.0)"
+						}
+					}],
+					yAxes: [{
+						ticks: {
+							stepSize: 1000
+						},
+						display: true,
+						borderDash: [3, 3],
+						gridLines: {
+							color: "rgba(0,0,0,0.0)"
+						}
+					}]
+				}
+			}
+		});
+	});
+</script>
+@section Scripts {
+	<script src="~/js/UsuarioDetalle.js"></script>
+}

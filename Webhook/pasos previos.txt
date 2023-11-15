@@ -1,0 +1,7 @@
+-Antes de iniciar el webhook se debe de instalar los módulos de la aplicación:
+
+npm install
+
+-Luego, para iniciar el webhook, nos dirigimos a la carpeta raiz de los archivos y usamos el comando:
+
+node src/index.js

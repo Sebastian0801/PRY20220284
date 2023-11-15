@@ -1,0 +1,65 @@
+﻿@using BE;
+@{
+	ViewData["Title"] = "Ajustes";
+	BEUsuarios UsuarioXID = ViewBag.UsuarioXID as BEUsuarios;
+}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">Ajustes de perfil</h5>
+            </div>
+            <div class="card-body">
+               <div>
+					<div class="row row-sm">
+						<div class="col-lg-4">
+							<div class="form-group">
+								<label class="form-label">DNI</label>
+								<input type="text" class="form-control" id="DNI" pattern="[0-9]+" placeholder="DNI" value="@UsuarioXID.DNI">
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="form-group">
+								<label class="form-label">Nombres</label>
+								<input type="text" class="form-control" id="nombres" placeholder="Nombre" value="@UsuarioXID.nombres">
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="form-group">
+								<label class="form-label">Apellidos</label>
+								<input type="text" class="form-control" id="apellidos" placeholder="Apellido" value="@UsuarioXID.apellidos">
+							</div>
+						</div>
+					</div>
+					<br />
+					<div class="row row-sm">
+						<div class="col-lg-4">
+							<div class="form-group">
+								<label class="form-label">Contraseña</label>
+								<input type="text" class="form-control" id="contraseña" placeholder="Contraseña" value="@UsuarioXID.textcontraseña">
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="form-group">
+								<label class="form-label">Correo</label>
+								<input type="email" class="form-control" id="correo" placeholder="Correo" value="@UsuarioXID.correo">
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="form-group">
+								<label class="form-label">Celular</label>
+								<input type="text" class="form-control" id="celular" placeholder="Celular(+51987654321)" value="@UsuarioXID.celular">
+							</div>
+						</div>
+					</div>
+			   </div>
+            </div>
+			<div class="card-footer" style="text-align:right;">
+				<button class="btn btn-success" onclick="validarCampos()">Guardar</button>
+			</div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+	<script src="~/js/Ajustes.js"></script>
+}

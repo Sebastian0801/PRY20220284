@@ -1,0 +1,224 @@
+﻿@using BE;
+@{
+	ViewData["Title"] = "Dashboard";
+	decimal? totalRecibido = ViewBag.totalRecibido as decimal?;
+	decimal? totalEmitido = ViewBag.totalEmitido as decimal?;
+	int? totalUsuarios = ViewBag.totalUsuarios as int?;
+	int? totalTransacciones = ViewBag.totalTransacciones as int?;
+	List<BEUsuarios> top5cuentascreadas = ViewBag.top5cuentascreadas as List<BEUsuarios>;
+	List<BETransacciones> top5movimientosrealizados = ViewBag.top5movimientosrealizados as List<BETransacciones>;
+	List<int> datosDashboard = ViewBag.datosDashboard as List<int>;
+}
+<div class="row">
+	<div class="col-3">
+		<div class="card">
+			<div class="card-body">
+				<div class="row">
+					<div class="col mt-0">
+						<h5 class="card-title">Usuarios</h5>
+					</div>
+
+					<div class="col-auto">
+						<div class="stat text-primary">
+							<i class="align-middle" data-feather="users"></i>
+						</div>
+					</div>
+				</div>
+				<h1 class="mt-1 mb-3">@totalUsuarios</h1>
+				<div class="mb-0">
+					<span class="text-muted">Usuarios activos</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-3">
+		<div class="card">
+			<div class="card-body">
+				<div class="row">
+					<div class="col mt-0">
+						<h5 class="card-title">Transacciones</h5>
+					</div>
+
+					<div class="col-auto">
+						<div class="stat text-primary">
+							<i class="align-middle" data-feather="credit-card"></i>
+						</div>
+					</div>
+				</div>
+				<h1 class="mt-1 mb-3">@totalTransacciones</h1>
+				<div class="mb-0">
+					<span class="text-muted">Cantidad de transacciones</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-3">
+		<div class="card">
+			<div class="card-body">
+				<div class="row">
+					<div class="col mt-0">
+						<h5 class="card-title">Recibido</h5>
+					</div>
+
+					<div class="col-auto">
+						<div class="stat text-primary">
+							<i class="align-middle" data-feather="arrow-down"></i>
+						</div>
+					</div>
+				</div>
+				<h1 class="mt-1 mb-3">S/. @totalRecibido</h1>
+				<div class="mb-0">
+					<span class="text-muted">Monto total recibido</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-3">
+		<div class="card">
+			<div class="card-body">
+				<div class="row">
+					<div class="col mt-0">
+						<h5 class="card-title">Emitido</h5>
+					</div>
+
+					<div class="col-auto">
+						<div class="stat text-primary">
+							<i class="align-middle" data-feather="arrow-up"></i>
+						</div>
+					</div>
+				</div>
+				<h1 class="mt-1 mb-3">S/. @totalEmitido</h1>
+				<div class="mb-0">
+					<span class="text-muted">Monto total emitido</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-12">
+		<div class="card">
+			<div class="card-header">
+				<h5 class="card-title mb-0">Transacciones realizadas por mes</h5>
+			</div>
+			<div class="card-body">
+				<div class="chart chart-sm">
+					<canvas id="chartjs-dashboard-line"></canvas>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-6">
+		<div class="card">
+			<div class="card-header">
+				<h5 class="card-title mb-0">Últimas cuentas creadas</h5>
+			</div>
+			<div class="card-body">
+				@foreach (var item1 in top5cuentascreadas)
+				{
+					<div class="row row-sm">
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label class="form-label">@item1.textidentificacion</label>
+							</div>
+						</div>
+						<div class="col-lg-6" style="text-align:center;">
+							<div class="form-group">
+								<label class="form-label">@item1.DNI</label>
+							</div>
+						</div>
+					</div>
+					<hr />
+				}
+			</div>
+		</div>
+	</div>
+	<div class="col-6">
+		<div class="card">
+			<div class="card-header">
+				<h5 class="card-title mb-0">Últimos movimientos realizados</h5>
+			</div>
+			<div class="card-body">
+				@foreach (var item2 in top5movimientosrealizados)
+				{
+					<div class="row row-sm">
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label class="form-label">@item2.nombreUsuario</label>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="form-group" style="text-align:center;">
+								<label class="form-label">S/. @item2.monto</label>
+							</div>
+						</div>
+					</div>
+					<hr />
+				}
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+
+		var LstdatosDashboard = @Html.Raw(Json.Serialize(datosDashboard));
+		//console.log(LstdatosDashboard);
+
+		var ctx = document.getElementById("chartjs-dashboard-line").getContext("2d");
+		var gradient = ctx.createLinearGradient(0, 0, 0, 225);
+		gradient.addColorStop(0, "rgba(215, 227, 244, 1)");
+		gradient.addColorStop(1, "rgba(215, 227, 244, 0)");
+		// Line chart
+		new Chart(document.getElementById("chartjs-dashboard-line"), {
+			type: "line",
+			data: {
+				labels: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+				datasets: [{
+					label: "Transacciones (Cantidad)",
+					fill: true,
+					backgroundColor: gradient,
+					borderColor: window.theme.primary,
+					data: LstdatosDashboard
+				}]
+			},
+			options: {
+				maintainAspectRatio: false,
+				legend: {
+					display: false
+				},
+				tooltips: {
+					intersect: false
+				},
+				hover: {
+					intersect: true
+				},
+				plugins: {
+					filler: {
+						propagate: false
+					}
+				},
+				scales: {
+					xAxes: [{
+						reverse: true,
+						gridLines: {
+							color: "rgba(0,0,0,0.0)"
+						}
+					}],
+					yAxes: [{
+						ticks: {
+							stepSize: 10
+						},
+						display: true,
+						borderDash: [3, 3],
+						gridLines: {
+							color: "rgba(0,0,0,0.0)"
+						}
+					}]
+				}
+			}
+		});
+	});
+</script>

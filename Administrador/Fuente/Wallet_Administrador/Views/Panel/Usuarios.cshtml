@@ -1,0 +1,119 @@
+﻿@{
+	ViewData["Title"] = "Usuarios";
+}
+<div class="row row-sm">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header" style="float:right; justify-content:right;">
+                <a class="modal-effect btn btn-success" data-bs-effect="effect-scale" data-bs-toggle="modal" href="#modaldemo8">
+                    Nuevo
+                    Usuario
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="row">
+	<div class="col-12">
+		<div class="card">
+			<div class="card-header">
+				<h5 class="card-title mb-0">Lista de Usuarios</h5>
+			</div>
+			<div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-responsive" style="width:100%" id="tablaUsuarios">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Usuario</th>
+                                <th scope="col">Estado</th>
+                                <th scope="col">Última transacción</th>
+                                <th scope="col">Fecha última transacción</th>
+                                <th scope="col">Balance general</th>
+                                <th scope="col">Opciones</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="modaldemo8">
+    <div class="modal-dialog modal-dialog-centered text-center" role="document">
+        <div class="modal-content modal-content-demo">
+            <div class="modal-header">
+                <h5 class="modal-title">Registrar Usuario</h5><button aria-label="Close" class="btn-close" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="row row-sm">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1" class="form-label">DNI</label>
+                            <input type="text" class="form-control" id="dni2" placeholder="12345678">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1" class="form-label">Celular</label>
+                            <input type="text" class="form-control" id="celular" placeholder="+51987654321">
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="row row-sm">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1" class="form-label">Nombres</label>
+                            <input type="text" class="form-control" id="nombres" placeholder="Nombres">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1" class="form-label">Apellidos</label>
+                            <input type="text" class="form-control" id="apellidos" placeholder="Apellidos">
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="row row-sm">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1" class="form-label">Correo</label>
+                            <input type="email" class="form-control" id="correo" placeholder="Correo">
+                        </div>
+                    </div>
+                     <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1" class="form-label">Contraseña</label>
+                            <input type="text" class="form-control" id="contraseña" placeholder="Contraseña">
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="row row-sm">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label class="form-label">Rol</label>
+                            <select name="country" class="form-control form-select" id="rol" data-bs-placeholder="Select Country">
+                                <option value="1">Usuario BOT</option>
+                                <option value="2">Agente</option>
+                                <option value="3">Administrador</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success" onclick="registrarUsuarios()">Registrar</button> <button class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script src="~/js/Usuarios.js"></script>
+}

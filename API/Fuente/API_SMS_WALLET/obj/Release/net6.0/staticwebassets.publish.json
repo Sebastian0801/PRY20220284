@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "B6o6NWpgWHvky/NKYRVNSlbkdt95bwb/OfwcCp5dSnc=",
+  "Source": "API_SMS_WALLET",
+  "BasePath": "_content/API_SMS_WALLET",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
